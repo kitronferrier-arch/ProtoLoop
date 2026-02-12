@@ -57,17 +57,11 @@ Implemented in App Router metadata and route handlers:
 - `app/sitemap.ts`
 - `app/robots.ts`
 
-## Contact Form
+## Contact
 
-`/contact` posts to `app/api/contact/route.ts`.
+`/contact` is email-only for v1.
 
-Current behavior is intentionally minimal for v1:
-
-- Validates required fields at form level
-- Logs submission payload server-side
-- Redirects back to `/contact?sent=1`
-
-This can be replaced later with a transactional email service or CRM integration.
+- Active contact: `KitronFerrier@gmail.com`
 
 ## Deploy to Vercel
 

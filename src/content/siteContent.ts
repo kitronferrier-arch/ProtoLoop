@@ -4,7 +4,7 @@ export type VentureCategory =
   | "Experimental"
   | "Operator Development";
 
-export type VentureStatus = "Live" | "Build" | "Research";
+export type VentureStatus = "Production" | "Build" | "Research";
 
 export interface VentureLink {
   label: string;
@@ -45,7 +45,7 @@ export const siteContent = {
       "We build operators, infrastructure, and compounding momentum.",
     deeperNote:
       "Behind the studio model is a practical belief: people perform best when their role, system, and timing are aligned. ProtoLoop develops operators through disciplined execution and clear ownership.",
-    email: "hello@protoloop.studio",
+    email: "KitronFerrier@gmail.com",
   },
   navigation: [
     { label: "Studio", href: "/studio" },
@@ -211,7 +211,7 @@ export const siteContent = {
       name: "SimplyCVR",
       slug: "simplycvr",
       category: "Infrastructure",
-      status: "Live",
+      status: "Production",
       valueProp:
         "Direct mail to QR funnel for home improvement businesses with lead tracking.",
       description: [
@@ -223,11 +223,11 @@ export const siteContent = {
       howItWorks:
         "Campaigns deploy with trackable assets, response routing, and a simple dashboard for lead status and handoff.",
       currentStage:
-        "Live with active operator feedback and process refinements.",
+        "In production with active operator feedback and process refinements.",
       nextMilestone:
         "Expand integrations and improve conversion workflow automation.",
       metric: "Pilot metrics available on request.",
-      links: [{ label: "Visit", href: "https://example.com/simplycvr" }],
+      links: [{ label: "Visit", href: "https://simplycvr.com" }],
       featured: true,
     },
     {
@@ -255,7 +255,7 @@ export const siteContent = {
       name: "EZ Autonomy",
       slug: "ez-autonomy",
       category: "Infrastructure",
-      status: "Research",
+      status: "Build",
       valueProp:
         "Autonomy tools and services for specific industries.",
       description: [
@@ -267,156 +267,14 @@ export const siteContent = {
       howItWorks:
         "Diagnostic mapping identifies high-leverage tasks, then structured autonomy pilots are scoped.",
       currentStage:
-        "Research with partner discovery and workflow mapping.",
+        "Build phase with partner discovery and workflow mapping.",
       nextMilestone:
         "Launch first constrained autonomy pilot in one target vertical.",
-    },
-    {
-      name: "LoopLedger",
-      slug: "loop-ledger",
-      category: "Infrastructure",
-      status: "Build",
-      valueProp:
-        "Execution intelligence layer for tracking venture loop performance.",
-      description: [
-        "LoopLedger provides operators with a single source of truth across attention, interaction, and conversion stages.",
-        "It helps teams measure where momentum compounds and where the loop stalls.",
-      ],
-      whoItsFor:
-        "Studio teams and partners running multiple initiatives in parallel.",
-      howItWorks:
-        "Projects are tagged by loop stage, then reviewed with milestone and bottleneck signals.",
-      currentStage:
-        "Build with internal deployment across studio projects.",
-      nextMilestone:
-        "Release partner-facing dashboard workflows.",
-    },
-    {
-      name: "Operator Grid",
-      slug: "operator-grid",
-      category: "Operator Development",
-      status: "Build",
-      valueProp:
-        "Operator development system for role clarity and execution growth.",
-      description: [
-        "Operator Grid helps builders grow through defined ownership, mentorship, and execution cycles.",
-        "The venture translates abstract talent potential into measurable operating capability.",
-      ],
-      whoItsFor:
-        "Early and mid-stage operators stepping into larger ownership roles.",
-      howItWorks:
-        "Participants run structured sprint cycles with role scorecards and mentor feedback loops.",
-      currentStage:
-        "Build phase with curriculum and operating cadence design.",
-      nextMilestone:
-        "Run the first formal operator cohort.",
-      metric: "Pilot cohort planned.",
-    },
-    {
-      name: "Signal Classroom",
-      slug: "signal-classroom",
-      category: "Education",
-      status: "Live",
-      valueProp:
-        "Applied education programs for modern venture builders.",
-      description: [
-        "Signal Classroom translates studio execution methods into clear learning pathways.",
-        "Programs emphasize immediate implementation over passive information consumption.",
-      ],
-      whoItsFor:
-        "Creators, founders, and teams who learn best by building.",
-      howItWorks:
-        "Workshops and guided modules pair instruction with live project application.",
-      currentStage:
-        "Live with ongoing topic expansion.",
-      nextMilestone:
-        "Launch advanced tracks for operators managing teams.",
-    },
-    {
-      name: "Pilot Relay",
-      slug: "pilot-relay",
-      category: "Infrastructure",
-      status: "Research",
-      valueProp:
-        "Pilot orchestration framework for faster venture validation.",
-      description: [
-        "Pilot Relay standardizes how new ventures enter and complete early validation cycles.",
-        "It reduces launch delays by aligning teams on milestones, constraints, and decision gates.",
-      ],
-      whoItsFor:
-        "Studios and operator teams managing multiple experiments.",
-      howItWorks:
-        "Templates and checklists define each pilot phase from setup through conversion review.",
-      currentStage:
-        "Research with partner workflow interviews.",
-      nextMilestone:
-        "Ship a minimal pilot orchestration toolkit.",
-    },
-    {
-      name: "Pattern Foundry",
-      slug: "pattern-foundry",
-      category: "Experimental",
-      status: "Build",
-      valueProp:
-        "Experiment lab for reusable growth and product patterns.",
-      description: [
-        "Pattern Foundry captures successful experiments and turns them into repeatable systems.",
-        "The goal is to improve quality while reducing reinvented process overhead.",
-      ],
-      whoItsFor:
-        "Internal studio teams and selected venture partners.",
-      howItWorks:
-        "Experiments are logged, scored, and converted into operating playbooks.",
-      currentStage:
-        "Build phase with internal documentation pipeline.",
-      nextMilestone:
-        "Publish the first pattern pack for partner teams.",
-    },
-    {
-      name: "Mentor Mesh",
-      slug: "mentor-mesh",
-      category: "Operator Development",
-      status: "Research",
-      valueProp:
-        "Mentorship network design for operator acceleration.",
-      description: [
-        "Mentor Mesh links operators with targeted guidance based on role stage and current bottlenecks.",
-        "It is designed to support accountable growth, not generic advisory conversations.",
-      ],
-      whoItsFor:
-        "Operators who need focused support during role expansion.",
-      howItWorks:
-        "Mentorship pathways are mapped to execution milestones and loop diagnostics.",
-      currentStage:
-        "Research and structure design.",
-      nextMilestone:
-        "Pilot a small mentor-operator matching cycle.",
-    },
-    {
-      name: "Conversion Briefing",
-      slug: "conversion-briefing",
-      category: "Education",
-      status: "Build",
-      valueProp:
-        "Training system for conversion narrative and sales execution clarity.",
-      description: [
-        "Conversion Briefing equips teams to communicate outcomes with precision across sales and education contexts.",
-        "The venture combines messaging structure with real-world conversion workflow practice.",
-      ],
-      whoItsFor:
-        "Teams that need better conversion consistency without aggressive sales culture.",
-      howItWorks:
-        "Sessions include narrative design, role-play, and measurable conversion checkpoints.",
-      currentStage:
-        "Build phase with curriculum validation.",
-      nextMilestone:
-        "Run cross-team pilot with feedback instrumentation.",
-      metric: "Pilot readiness tracking active.",
     },
   ] as Venture[],
 };
 
 export const featuredVentures = {
   homeFeatured: "simplycvr",
-  homeBuild: ["protosticks", "loop-ledger"],
+  homeBuild: ["protosticks", "ez-autonomy"],
 };

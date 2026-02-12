@@ -100,7 +100,7 @@ export default async function VentureDetailPage({
 
       <div className="flex flex-wrap gap-3">
         <Button href="/work-with-us">Work with us</Button>
-        {venture.status === "Live" && venture.links?.[0] ? (
+        {venture.links?.[0] ? (
           <Button href={venture.links[0].href} variant="secondary">
             Visit
           </Button>

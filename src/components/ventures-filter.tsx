@@ -12,7 +12,7 @@ const categories: Array<"All" | VentureCategory> = [
   "Operator Development",
 ];
 
-const statuses: Array<"All" | VentureStatus> = ["All", "Live", "Build", "Research"];
+const statuses: Array<"All" | VentureStatus> = ["All", "Production", "Build", "Research"];
 
 export function VenturesFilter({ ventures }: { ventures: Venture[] }) {
   const [category, setCategory] = useState<"All" | VentureCategory>("All");
