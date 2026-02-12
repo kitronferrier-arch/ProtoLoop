@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ProtoLoop Web
 
-## Getting Started
+Production-ready marketing site for ProtoLoop built with Next.js App Router, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 App Router
+- TypeScript
+- Tailwind CSS v4
+- File-based content model (`src/content/siteContent.ts`)
+
+## Routes
+
+- `/`
+- `/studio`
+- `/framework`
+- `/ventures`
+- `/ventures/[slug]`
+- `/operators`
+- `/labs`
+- `/work-with-us`
+- `/ivan`
+- `/contact`
+- `/loop-diagnostic`
+
+## Content Editing
+
+All core copy and structured content live in:
+
+- `src/content/siteContent.ts`
+
+Update this file to edit mission copy, ventures, labs posts, founders, partnership lanes, and speaking topics.
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quality Checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
 
-## Learn More
+## SEO
 
-To learn more about Next.js, take a look at the following resources:
+Implemented in App Router metadata and route handlers:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Global metadata + OpenGraph + Twitter cards in `app/layout.tsx`
+- Dynamic OG/Twitter images in `app/opengraph-image.tsx` and `app/twitter-image.tsx`
+- `app/sitemap.ts`
+- `app/robots.ts`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contact Form
 
-## Deploy on Vercel
+`/contact` posts to `app/api/contact/route.ts`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Current behavior is intentionally minimal for v1:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Validates required fields at form level
+- Logs submission payload server-side
+- Redirects back to `/contact?sent=1`
+
+This can be replaced later with a transactional email service or CRM integration.
+
+## Deploy to Vercel
+
+1. Push repository to GitHub.
+2. Import project into Vercel.
+3. Build command: `npm run build`
+4. Output: default Next.js output.
+
+No external CMS or third-party form dependencies are required for v1.
