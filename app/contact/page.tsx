@@ -2,16 +2,16 @@ import { Metadata } from "next";
 import { Card } from "@/src/components/ui/card";
 import { SectionTitle } from "@/src/components/ui/section-title";
 import { siteContent } from "@/src/content/siteContent";
+import { pageSeo } from "@/src/content/seo";
+import { buildPageMetadata } from "@/src/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description: "Contact ProtoLoop for partnership and speaking inquiries.",
-};
+export const metadata: Metadata = buildPageMetadata(pageSeo.contact);
 
 export default function ContactPage() {
   return (
     <div className="container-shell section-space fade-in space-y-8">
       <SectionTitle
+        as="h1"
         eyebrow="Contact"
         title="Start the conversation"
         description="Share what you are building and where you are blocked. We will respond with next steps if there is fit."

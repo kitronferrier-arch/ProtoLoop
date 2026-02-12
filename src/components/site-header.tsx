@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -31,8 +32,9 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[color:var(--bg)]/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-lg font-semibold tracking-tight text-white">
-          ProtoLoop
+        <Link href="/" className="flex items-center gap-2 text-lg font-semibold tracking-tight text-white">
+          <Image src="/brand/logo-transparent-2026.png" alt="ProtoLoop logo" width={28} height={28} />
+          <span>ProtoLoop</span>
         </Link>
 
         <nav aria-label="Primary navigation" className="hidden items-center gap-6 md:flex">

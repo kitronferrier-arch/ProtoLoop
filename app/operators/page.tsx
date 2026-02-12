@@ -2,11 +2,10 @@ import { Metadata } from "next";
 import { Card } from "@/src/components/ui/card";
 import { SectionTitle } from "@/src/components/ui/section-title";
 import { siteContent } from "@/src/content/siteContent";
+import { pageSeo } from "@/src/content/seo";
+import { buildPageMetadata } from "@/src/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Operators",
-  description: "Role clarity at ProtoLoop: creator and architect leadership with operator development.",
-};
+export const metadata: Metadata = buildPageMetadata(pageSeo.operators);
 
 export default function OperatorsPage() {
   const { founders } = siteContent;
@@ -14,6 +13,7 @@ export default function OperatorsPage() {
   return (
     <div className="container-shell section-space fade-in space-y-8">
       <SectionTitle
+        as="h1"
         eyebrow="Operators"
         title="ProtoLoop operates on role clarity"
         description="Ivan leads creation: prototyping, storytelling, education, and connection. Kitron leads architecture: systems, operations, distribution, and team execution."

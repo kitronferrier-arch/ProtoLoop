@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+import Link from "next/link";
 import { Button } from "@/src/components/ui/button";
 import { Card } from "@/src/components/ui/card";
 import { SectionTitle } from "@/src/components/ui/section-title";
@@ -5,6 +7,10 @@ import { LoopSteps } from "@/src/components/loop-steps";
 import { VentureCard } from "@/src/components/venture-card";
 import { getFeaturedHomeVentures } from "@/src/content/selectors";
 import { siteContent } from "@/src/content/siteContent";
+import { pageSeo } from "@/src/content/seo";
+import { buildPageMetadata } from "@/src/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata(pageSeo.home);
 
 export default function HomePage() {
   const { featured, build } = getFeaturedHomeVentures();
@@ -119,6 +125,28 @@ export default function HomePage() {
             Meet the operators
           </Button>
         </div>
+      </section>
+
+      <section className="section-space section-divider container-shell">
+        <SectionTitle
+          eyebrow="Explore"
+          title="Key studio pages"
+          description="Use these pages to review the studio model, venture catalog, and partnership lanes."
+        />
+        <nav aria-label="Key internal links" className="mt-6 flex flex-wrap gap-5 text-sm text-slate-300">
+          <Link className="hover:text-[var(--accent)]" href="/studio">
+            What is ProtoLoop
+          </Link>
+          <Link className="hover:text-[var(--accent)]" href="/framework">
+            Loop Framework
+          </Link>
+          <Link className="hover:text-[var(--accent)]" href="/ventures">
+            Venture catalog
+          </Link>
+          <Link className="hover:text-[var(--accent)]" href="/work-with-us">
+            Partnership lanes
+          </Link>
+        </nav>
       </section>
     </div>
   );

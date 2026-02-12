@@ -3,16 +3,16 @@ import { LoopSteps } from "@/src/components/loop-steps";
 import { Card } from "@/src/components/ui/card";
 import { SectionTitle } from "@/src/components/ui/section-title";
 import { siteContent } from "@/src/content/siteContent";
+import { pageSeo } from "@/src/content/seo";
+import { buildPageMetadata } from "@/src/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Framework",
-  description: "The ProtoLoop Loop Framework: Attention, Interaction, and Conversion.",
-};
+export const metadata: Metadata = buildPageMetadata(pageSeo.framework);
 
 export default function FrameworkPage() {
   return (
     <div className="container-shell section-space fade-in space-y-10">
       <SectionTitle
+        as="h1"
         eyebrow="Loop Framework"
         title="Attention -> Interaction -> Conversion"
         description="ProtoLoop uses one operating loop across every venture so momentum compounds instead of fragmenting."

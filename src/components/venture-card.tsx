@@ -17,7 +17,7 @@ export function VentureCard({ venture }: { venture: Venture }) {
           href={`/ventures/${venture.slug}`}
           className="text-sm font-medium text-[var(--accent)] transition hover:text-[var(--accent-strong)]"
         >
-          View details
+          View details for {venture.name}
         </Link>
       </div>
     </Card>

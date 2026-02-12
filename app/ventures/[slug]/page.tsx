@@ -1,10 +1,17 @@
 import { Metadata } from "next";
+import Script from "next/script";
 import { notFound } from "next/navigation";
 import { Button } from "@/src/components/ui/button";
 import { Badge } from "@/src/components/ui/badge";
 import { Card } from "@/src/components/ui/card";
 import { getVentureBySlug } from "@/src/content/selectors";
 import { siteContent } from "@/src/content/siteContent";
+import { seoConfig } from "@/src/content/seo";
+import {
+  absoluteUrl,
+  buildBreadcrumbJsonLd,
+  buildVentureCreativeWorkJsonLd,
+} from "@/src/lib/seo";
 
 export async function generateStaticParams() {
   return siteContent.ventures.map((venture) => ({ slug: venture.slug }));
@@ -19,12 +26,47 @@ export async function generateMetadata({
   const venture = getVentureBySlug(slug);
 
   if (!venture) {
-    return { title: "Venture" };
+    return {
+      title: "Venture",
+      description: seoConfig.defaultDescription,
+      alternates: {
+        canonical: absoluteUrl("/ventures"),
+      },
+    };
   }
 
+  const canonicalPath = `/ventures/${venture.slug}`;
+  const ogImage = venture.thumbnail ?? seoConfig.defaultOgImage;
+
   return {
-    title: venture.name,
+    title: `${venture.name} Venture`,
     description: venture.valueProp,
+    alternates: {
+      canonical: absoluteUrl(canonicalPath),
+    },
+    openGraph: {
+      title: `${venture.name} | ProtoLoop`,
+      description: venture.valueProp,
+      url: absoluteUrl(canonicalPath),
+      type: "article",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${venture.name} | ProtoLoop`,
+      description: venture.valueProp,
+      images: [ogImage],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 
@@ -40,8 +82,25 @@ export default async function VentureDetailPage({
     notFound();
   }
 
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Ventures", path: "/ventures" },
+    { name: venture.name, path: `/ventures/${venture.slug}` },
+  ]);
+  const ventureJsonLd = buildVentureCreativeWorkJsonLd(venture);
+
   return (
     <div className="container-shell section-space fade-in space-y-8">
+      <Script
+        id={`jsonld-venture-breadcrumb-${venture.slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <Script
+        id={`jsonld-venture-creativework-${venture.slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ventureJsonLd) }}
+      />
       <header className="space-y-4">
         <div className="flex flex-wrap gap-2">
           <Badge tone="accent">{venture.status}</Badge>
@@ -99,6 +158,9 @@ export default async function VentureDetailPage({
       ) : null}
 
       <div className="flex flex-wrap gap-3">
+        <Button href="/ventures" variant="secondary">
+          Back to ventures
+        </Button>
         <Button href="/work-with-us">Work with us</Button>
         {venture.links?.[0] ? (
           <Button href={venture.links[0].href} variant="secondary">

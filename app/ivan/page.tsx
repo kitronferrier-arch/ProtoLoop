@@ -3,16 +3,16 @@ import { Button } from "@/src/components/ui/button";
 import { Card } from "@/src/components/ui/card";
 import { SectionTitle } from "@/src/components/ui/section-title";
 import { siteContent } from "@/src/content/siteContent";
+import { pageSeo } from "@/src/content/seo";
+import { buildPageMetadata } from "@/src/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Ivan",
-  description: "Ivan profile: speaking, education, rapid prototyping, and consulting.",
-};
+export const metadata: Metadata = buildPageMetadata(pageSeo.ivan);
 
 export default function IvanPage() {
   return (
     <div className="container-shell section-space fade-in space-y-8">
       <SectionTitle
+        as="h1"
         eyebrow="Ivan"
         title="Creator, educator, and prototype operator"
         description="Ivan leads creation at ProtoLoop through rapid prototyping, communication systems, and practical education design."

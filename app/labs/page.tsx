@@ -2,16 +2,16 @@ import { Metadata } from "next";
 import { Card } from "@/src/components/ui/card";
 import { SectionTitle } from "@/src/components/ui/section-title";
 import { siteContent } from "@/src/content/siteContent";
+import { pageSeo } from "@/src/content/seo";
+import { buildPageMetadata } from "@/src/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Labs",
-  description: "ProtoLoop experiments feed: bottleneck, hypothesis, results, and next step.",
-};
+export const metadata: Metadata = buildPageMetadata(pageSeo.labs);
 
 export default function LabsPage() {
   return (
     <div className="container-shell section-space fade-in space-y-8">
       <SectionTitle
+        as="h1"
         eyebrow="Labs"
         title="Experiment feed"
         description="A running log of bottlenecks, hypotheses, and execution outcomes across the studio."

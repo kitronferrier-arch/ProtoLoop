@@ -56,6 +56,25 @@ Implemented in App Router metadata and route handlers:
 - Dynamic OG/Twitter images in `app/opengraph-image.tsx` and `app/twitter-image.tsx`
 - `app/sitemap.ts`
 - `app/robots.ts`
+- Sitewide structured data in `app/layout.tsx` (Organization + WebSite)
+- Venture detail structured data in `app/ventures/[slug]/page.tsx` (BreadcrumbList + CreativeWork)
+
+### SEO checklist completed
+
+- Unique title and description metadata for all public routes
+- Canonical URLs standardized to `https://protoloop.net`
+- `robots.txt` includes sitemap reference
+- Open Graph + Twitter defaults configured globally and route-level metadata applied
+- JSON-LD implemented for Organization, WebSite, and venture detail pages
+- Semantic heading structure enforced with one `h1` per page
+- Internal linking improved from homepage and venture pages
+- Indexing defaults set to `index,follow` (no accidental global `noindex`)
+
+### Updating metadata
+
+- Edit global defaults in `src/content/seo.ts` (`seoConfig`)
+- Edit per-route SEO copy in `src/content/seo.ts` (`pageSeo`)
+- Edit metadata builder behavior in `src/lib/seo.ts`
 
 ## Contact
 

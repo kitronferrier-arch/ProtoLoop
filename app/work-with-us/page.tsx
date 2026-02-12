@@ -3,16 +3,16 @@ import { Button } from "@/src/components/ui/button";
 import { Card } from "@/src/components/ui/card";
 import { SectionTitle } from "@/src/components/ui/section-title";
 import { siteContent } from "@/src/content/siteContent";
+import { pageSeo } from "@/src/content/seo";
+import { buildPageMetadata } from "@/src/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Work with us",
-  description: "Partnership lanes at ProtoLoop for venture partners and systems partners.",
-};
+export const metadata: Metadata = buildPageMetadata(pageSeo.workWithUs);
 
 export default function WorkWithUsPage() {
   return (
     <div className="container-shell section-space fade-in space-y-8">
       <SectionTitle
+        as="h1"
         eyebrow="Partnership"
         title="Work with ProtoLoop"
         description={siteContent.partnershipModel}

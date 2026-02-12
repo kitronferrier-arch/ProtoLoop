@@ -24,6 +24,7 @@ export interface Venture {
   nextMilestone: string;
   metric?: string;
   links?: VentureLink[];
+  thumbnail?: string;
   featured?: boolean;
 }
 

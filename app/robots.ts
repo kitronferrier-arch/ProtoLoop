@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://protoloop.studio/sitemap.xml",
+    sitemap: "https://protoloop.net/sitemap.xml",
   };
 }

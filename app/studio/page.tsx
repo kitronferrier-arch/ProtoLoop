@@ -2,16 +2,16 @@ import { Metadata } from "next";
 import { SectionTitle } from "@/src/components/ui/section-title";
 import { Card } from "@/src/components/ui/card";
 import { siteContent } from "@/src/content/siteContent";
+import { pageSeo } from "@/src/content/seo";
+import { buildPageMetadata } from "@/src/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Studio",
-  description: "What ProtoLoop is and how structured loops guide venture creation.",
-};
+export const metadata: Metadata = buildPageMetadata(pageSeo.studio);
 
 export default function StudioPage() {
   return (
     <div className="container-shell section-space fade-in space-y-10">
       <SectionTitle
+        as="h1"
         eyebrow="Studio"
         title="ProtoLoop is a Venture Systems Studio"
         description="We design and launch ventures through structured feedback loops so teams can move with precision and compounding momentum."
