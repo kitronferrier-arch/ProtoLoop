@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { siteContent } from "@/src/content/siteContent";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://protoloop.net";
+  const baseUrl = "https://www.protoloop.net";
 
   const staticRoutes = [
     "",
