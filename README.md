@@ -80,7 +80,7 @@ Implemented in App Router metadata and route handlers:
 
 `/contact` is email-only for v1.
 
-- Active contact: `KitronFerrier@gmail.com`
+- Active contact: `kitron@protoloop.net`
 
 ## Deploy to Vercel
 

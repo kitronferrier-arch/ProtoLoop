@@ -46,7 +46,7 @@ export const siteContent = {
       "We build operators, infrastructure, and compounding momentum.",
     deeperNote:
       "Behind the studio model is a practical belief: people perform best when their role, system, and timing are aligned. ProtoLoop develops operators through disciplined execution and clear ownership.",
-    email: "KitronFerrier@gmail.com",
+    email: "kitron@protoloop.net",
   },
   navigation: [
     { label: "Studio", href: "/studio" },
