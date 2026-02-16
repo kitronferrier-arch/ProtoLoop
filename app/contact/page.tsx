@@ -17,18 +17,24 @@ export default function ContactPage() {
         description="Share what you are building and where you are blocked. We will respond with next steps if there is fit."
       />
 
-      <Card className="max-w-3xl space-y-4">
-        <p className="text-sm text-slate-300">
-          For all partnership, speaking, and studio inquiries:
-        </p>
-        <p className="text-sm text-slate-300">
-          <a className="text-[var(--accent)] underline underline-offset-4" href={`mailto:${siteContent.brand.email}`}>
+      <Card className="max-w-3xl space-y-6">
+        <div className="space-y-2">
+          <p className="text-sm font-semibold text-slate-200">
+            For all partnership, speaking, and studio inquiries:
+          </p>
+          <a 
+            className="inline-flex items-center px-4 py-2.5 rounded-lg bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20 transition-colors font-semibold" 
+            href={`mailto:${siteContent.brand.email}`}
+          >
             {siteContent.brand.email}
           </a>
-        </p>
-        <p className="text-sm text-slate-400">
-          Email is the only active contact channel on this site right now.
-        </p>
+        </div>
+        
+        <div className="pt-4 border-t border-slate-700">
+          <p className="text-xs text-slate-400">
+            Email is the only active contact channel on this site right now. We typically respond within 24-48 hours.
+          </p>
+        </div>
       </Card>
     </div>
   );
